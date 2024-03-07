@@ -48,15 +48,16 @@ minecraft {
 }
 
 repositories {
-    maven {
-        url "https://www.cursemaven.com"
-    }
+    maven { url = 'https://files.minecraftforge.net/maven' }
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+    mavenCentral()
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
 
     implementation fg.deobf("curse.maven:lodestone-616457:5078837")
+    // implementation fg.deobf("team.lodestar.lodestone:lodestone:1.20.1-1.4.2.62")
 }
 
 tasks.withType(JavaCompile).configureEach {
