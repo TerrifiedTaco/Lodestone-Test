@@ -1,5 +1,31 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "TestLodestoneProc",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "test_lodestone_proc",
+      "metadata": {
+        "files": [
+          "src/main/java/com/terrifiedtaco/lodestonetest/procedures/TestLodestoneProcProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "TestLodestone",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_lodestone",
+      "metadata": {
+        "files": [
+          "src/main/java/com/terrifiedtaco/lodestonetest/command/TestLodestoneCommand.java"
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
