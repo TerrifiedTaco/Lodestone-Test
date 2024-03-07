@@ -1,9 +1,22 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
+    }
+}
+
 plugins {
     id 'eclipse'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
     id 'maven-publish'
-    id 'org.spongepowered.mixin'
 }
+
+apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
 group = 'com.yourname.modid'
@@ -49,15 +62,16 @@ minecraft {
 
 repositories {
     maven { url = 'https://files.minecraftforge.net/maven' }
+    maven { url = 'https://cursemaven.com' }
     maven { url = 'https://repo.spongepowered.org/repository/maven-public/' }
     mavenCentral()
 }
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
-
+	//runtimeOnly fg.deobf("curse.maven:lodestone-616457:5078837")
     implementation fg.deobf("curse.maven:lodestone-616457:5078837")
-    // implementation fg.deobf("team.lodestar.lodestone:lodestone:1.20.1-1.4.2.62")
+    //implementation fg.deobf("team.lodestar.lodestone:lodestone:1.20.1-1.4.2.62")
 }
 
 tasks.withType(JavaCompile).configureEach {
